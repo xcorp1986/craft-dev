@@ -66,6 +66,7 @@ class StrategicProgrammeTransformer extends TransformerAbstract
                         'content' => $block->contentBody,
                     ];
                 }, $entry->strategicProgrammeResources->all() ?? []),
+                'flexibleContent' => $entry->flexibleContent ? ContentHelpers::extractFlexibleContent($entry, $this->locale) : null,
             ]);
         }
 

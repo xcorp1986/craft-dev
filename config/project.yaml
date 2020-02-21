@@ -44,7 +44,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: a0dbb9d0-734d-4e43-a0d5-56e09ff07075
-dateModified: 1581689778
+dateModified: 1582109221
 email:
   fromEmail: noreply@blf.digital
   fromName: 'The National Lottery Community Fund Digital'
@@ -1923,7 +1923,8 @@ matrixBlockTypes:
         name: 'Quote text'
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -1940,7 +1941,8 @@ matrixBlockTypes:
         name: Title
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -1970,7 +1972,8 @@ matrixBlockTypes:
         name: 'Photo caption'
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -1995,12 +1998,14 @@ matrixBlockTypes:
           localizeRelations: ''
           restrictFiles: '1'
           selectionLabel: 'Add a photo'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:0516f25e-8c65-48c1-9c7a-f94a6a954edf'
           singleUploadLocationSubpath: media-asides
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: '1'
+          useSingleFolder: true
           validateRelatedElements: ''
           viewMode: large
         translationKeyFormat: null
@@ -2014,7 +2019,8 @@ matrixBlockTypes:
         name: 'Link text'
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -2305,6 +2311,40 @@ matrixBlockTypes:
     handle: document
     name: Document
     sortOrder: '1'
+  2af6159f-c1ac-44c9-b9c4-e8338924b554:
+    field: 40755bc8-380a-49b7-9f5b-786c5e1e6bbe
+    fieldLayouts:
+      9ee0a106-ffb8-4eae-b6d7-fb2b623e05c8:
+        tabs:
+          -
+            fields:
+              6cf3ce9e-aded-4529-8f97-623b2925574e:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      6cf3ce9e-aded-4529-8f97-623b2925574e:
+        contentColumnType: text
+        fieldGroup: null
+        handle: tabText
+        instructions: 'Enter some text to be used as a tab heading. Every block below this will be grouped into a tab (until another tab heading is inserted).'
+        name: 'Tab text'
+        searchable: false
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: site
+        type: craft\fields\PlainText
+    handle: tabHeading
+    name: 'Tab Heading'
+    sortOrder: 10
   2c3319ca-6bc4-4ccf-bfb7-d5209f897813:
     field: 40755bc8-380a-49b7-9f5b-786c5e1e6bbe
     fieldLayouts:
@@ -2329,7 +2369,8 @@ matrixBlockTypes:
         name: Title
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -2347,17 +2388,22 @@ matrixBlockTypes:
         searchable: true
         settings:
           columns:
-            268:
-              __assoc__:
+            __assoc__:
+              -
+                - b12041a2-e5fa-4a46-9c59-845f38904c4d
                 -
-                  - width
-                  - ''
-            269:
-              __assoc__:
+                  __assoc__:
+                    -
+                      - width
+                      - ''
+              -
+                - bd4940c4-0930-4c96-afb8-76b05ad900b5
                 -
-                  - width
-                  - ''
-          contentTable: '{{%stc_29_facts}}'
+                  __assoc__:
+                    -
+                      - width
+                      - ''
+          contentTable: '{{%stc_30_facts}}'
           fieldLayout: row
           maxRows: ''
           minRows: '1'
@@ -2843,7 +2889,8 @@ matrixBlockTypes:
         name: Title
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -2903,35 +2950,35 @@ matrixBlockTypes:
           columns:
             __assoc__:
               -
-                - 260
+                - 9e3ed77a-cb3c-491b-b2ad-503715cbf99b
                 -
                   __assoc__:
                     -
                       - width
                       - ''
               -
-                - 263
+                - b3ea3f1a-27d9-4c1e-b903-3ae96acc74b9
                 -
                   __assoc__:
                     -
                       - width
                       - ''
               -
-                - 261
+                - ab94c548-6f17-4790-b6dd-4c766143bee5
                 -
                   __assoc__:
                     -
                       - width
                       - ''
               -
-                - 258
+                - 2184906d-f2b9-4d39-a094-bfa50ccf8271
                 -
                   __assoc__:
                     -
                       - width
                       - ''
               -
-                - 259
+                - 2dbee670-c961-4ea7-b503-cf23bce9541e
                 -
                   __assoc__:
                     -
@@ -2955,7 +3002,8 @@ matrixBlockTypes:
         name: Heading
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -3016,11 +3064,14 @@ matrixBlockTypes:
         searchable: true
         settings:
           columns:
-            253:
-              __assoc__:
+            __assoc__:
+              -
+                - 5643199b-c773-4d2b-97b9-18270e979de5
                 -
-                  - width
-                  - ''
+                  __assoc__:
+                    -
+                      - width
+                      - ''
           contentTable: '{{%stc_25_blocks}}'
           fieldLayout: matrix
           maxRows: ''
@@ -3039,7 +3090,8 @@ matrixBlockTypes:
         name: Title
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -3325,12 +3377,14 @@ matrixBlockTypes:
           localizeRelations: ''
           restrictFiles: '1'
           selectionLabel: 'Add a photo'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:0516f25e-8c65-48c1-9c7a-f94a6a954edf'
           singleUploadLocationSubpath: inline-figures
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: '1'
+          useSingleFolder: true
           validateRelatedElements: ''
           viewMode: large
         translationKeyFormat: null
@@ -3344,7 +3398,8 @@ matrixBlockTypes:
         name: Title
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -3361,7 +3416,8 @@ matrixBlockTypes:
         name: 'Photo caption'
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -3561,7 +3617,8 @@ matrixBlockTypes:
         name: 'Quote text'
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -3578,7 +3635,8 @@ matrixBlockTypes:
         name: Attribution
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -3595,7 +3653,8 @@ matrixBlockTypes:
         name: Title
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5361,16 +5420,19 @@ sections:
                 fields:
                   02eb210a-8b09-489c-994d-009c27b6167b:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 5
                   1620ec3b-4d1d-4929-bd17-68cf9f224a53:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 1
+                  40755bc8-380a-49b7-9f5b-786c5e1e6bbe:
+                    required: false
+                    sortOrder: 4
                   bcbf9339-ab42-4e3f-9db7-eaf3b499d36c:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 3
                   ccd71b86-6564-429f-972a-1def8e6840a4:
                     required: true
-                    sortOrder: 4
+                    sortOrder: 2
                 name: Common
                 sortOrder: 1
               -
@@ -5743,12 +5805,14 @@ superTableBlockTypes:
           localizeRelations: ''
           restrictFiles: '1'
           selectionLabel: ''
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:0516f25e-8c65-48c1-9c7a-f94a6a954edf'
           singleUploadLocationSubpath: facts
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: '1'
+          useSingleFolder: true
           validateRelatedElements: ''
           viewMode: list
         translationKeyFormat: null
@@ -5787,7 +5851,8 @@ superTableBlockTypes:
         name: Description
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5812,12 +5877,14 @@ superTableBlockTypes:
           localizeRelations: ''
           restrictFiles: '1'
           selectionLabel: ''
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:0516f25e-8c65-48c1-9c7a-f94a6a954edf'
           singleUploadLocationSubpath: ''
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: ''
+          useSingleFolder: false
           validateRelatedElements: ''
           viewMode: list
         translationKeyFormat: null
@@ -5862,7 +5929,8 @@ superTableBlockTypes:
         name: Title
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'

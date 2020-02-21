@@ -140,6 +140,7 @@ class ContentHelpers
         if (!$entry->flexibleContent) {
             return [];
         }
+
         foreach ($entry->flexibleContent->all() as $block) {
             switch ($block->type->handle) {
                 case 'contentArea':
@@ -262,9 +263,48 @@ class ContentHelpers
                         array_push($parts, $data);
                     }
                     break;
+                case 'tabHeading':
+                    if ($block->tabText) {
+                        array_push($parts, [
+                            'type' => $block->type->handle,
+                            'text' => $block->tabText,
+                        ]);
+                    }
+                    break;
             }
         }
+
+
+        $tabContent = [];
+        $tabBlockType = 'tabHeading';
+        $blockTypes = array_column($parts, 'type');
+        $hasTabs = array_search($tabBlockType, $blockTypes) !== false;
+
+        if ($hasTabs) {
+            $tabIndexes = array_keys($blockTypes, $tabBlockType);
+            foreach($tabIndexes as $i => $tabBlockIndex){
+                $nextIndex = isset($tabIndexes[$i + 1]) ? $tabIndexes[$i + 1] : count($parts);
+                $blocksForTab = array_slice($parts, $tabBlockIndex, $nextIndex);
+
+                $blocks = array_filter($blocksForTab, function ($block) use ($tabBlockType) {
+                    return $block['type'] !== $tabBlockType;
+                });
+
+                array_push($tabContent, [
+                    'tab' => $parts[$tabBlockIndex],
+                    'blocks' => array_values($blocks)
+                ]);
+            }
+        }
+
+        if ($hasTabs && $tabContent) {
+            $parts = [
+                'tabs' => $tabContent
+            ];
+        }
+
         return $parts;
+
     }
 
     /**
